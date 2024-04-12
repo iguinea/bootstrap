@@ -1,0 +1,82 @@
+---
+- name: Instalación de herramientas y aplicaciones en macOS
+  hosts: localhost
+  gather_facts: no
+  
+
+  tasks:
+    - name: Instalar paquetes con Homebrew
+      homebrew:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - aws-iam-authenticator
+        - aws-shell
+        - aws-sso-cli
+        - aws-sso-util
+        - awscli
+        - awslogs
+        - azure-cli
+        - btop
+        - curl
+        - git
+        - htop
+        - k9s
+        - jan
+        - jq
+        - kubernetes-cli
+        - minikube
+        - mysql-client
+        - readline
+        - skhd
+        - socat
+        - sqlite
+        - telnet
+        - tmux
+        - upx
+        - vim
+        - virtualenv
+        - watch
+        - wget
+        - xz
+        - yabai
+        - yq
+
+    - name: Instalar casks con Homebrew
+      homebrew_cask:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - 1password-cli
+        - adobe-acrobat-reader
+        - another-redis-desktop-manager
+        - beekeeper-studio
+        - calibre
+        - chromium
+        - cloudflare-warp
+        - db-browser-for-sqlite
+        - firefox
+        - font-fira-code
+        - font-fontawesome
+        - font-hack-nerd-font
+        - gimp
+        - google-chrome
+        - google-cloud-sdk
+        - google-drive
+        - iterm2
+        - karabiner-elements
+        - librewolf
+        - macfuse
+        - mongodb-compass
+        - mysqlworkbench
+        - obsidian
+        - postman
+        - rar
+        - sapmachine-jdk
+        - sf-symbols
+        - spotify
+        - sqlitestudio
+        - telegram
+        - visual-studio-code
+        - vlc
+        - xquartz
